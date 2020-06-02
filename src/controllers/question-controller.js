@@ -16,11 +16,11 @@ exports.listQuestion = async (req, res) => {
 // create
 exports.createQuestion = async (req, res) => {
     try {
-        await repository.createQuestion({
+        await repository.createQuestion([{
         question: req.body.question,
         correctAnswer: req.body.correctAnswer,
         options: req.body.options
-        });
+        }]);
         res.status(201).send({message: 'Question registered successfully.'});
     } catch (e) {
         res.status(500).send({message: 'Failed to register question.'});
