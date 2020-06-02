@@ -19,7 +19,7 @@ exports.createQuestion = async (req, res) => {
         await repository.createQuestion({
         question: req.body.question,
         correctAnswer: req.body.correctAnswer,
-        options: req.body.options,
+        options: req.body.options
         });
         res.status(201).send({message: 'Question registered successfully.'});
     } catch (e) {
